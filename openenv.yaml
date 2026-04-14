@@ -1,0 +1,9 @@
+name: adaptive_fraud_monitoring
+benchmark: openenv-fraud-v1
+description: Adaptive risk-aware financial transaction monitoring RL environment
+version: 1.0
+entrypoint: python inference.py
+tasks:
+  - easy
+  - medium
+  - hard
