@@ -2,7 +2,7 @@ name: adaptive_fraud_monitoring
 benchmark: openenv-fraud-v1
 description: Adaptive risk-aware financial transaction monitoring RL environment
 version: 1.0
-entrypoint: python inference.py
+entrypoint: uvicorn server.app:app --host 0.0.0.0 --port 8000
 tasks:
   - easy
   - medium

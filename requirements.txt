@@ -1,3 +1,7 @@
 openai
 pydantic
 pyyaml
+openenv-core
+fastapi
+uvicorn
+websockets

@@ -1,5 +1,5 @@
 # Use a lightweight python image
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -15,5 +15,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application code
 COPY . .
 
+# Environment variables for the OpenEnv instance
+ENV WORKERS=4
+ENV MAX_CONCURRENT_ENVS=100
+
+# Expose server port
+EXPOSE 8000
+
 # Command to run the inference script
-CMD ["python", "inference.py"]
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "8000"]

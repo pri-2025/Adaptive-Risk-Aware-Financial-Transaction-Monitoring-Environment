@@ -80,8 +80,7 @@ class AdaptiveFraudMonitoringEnv:
                 reward = 1.0
             elif decision == "freeze":
                 reward = -2.0 # False Positive
-            elif decision == "flag":
-                reward = -1.0 # Excessive monitoring/minor penalty
+           
             elif decision == "escalate":
                 reward = -0.5 # Neutral/Minor penalty
         
